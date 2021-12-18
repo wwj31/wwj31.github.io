@@ -1,26 +1,24 @@
 ## 王文杰的主页
-不想加班的后端
+游戏行业，不想加班的后端
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
+### 笔记
+json官方库，值类型是[]byte的一个细节
 ```markdown
-Syntax highlighted code block
+func ExampleJson() {
+	m := make(map[string]interface{})
+	// String values encode as JSON strings coerced to valid UTF-8,
+	// replacing invalid bytes with the Unicode replacement rune.
+	m["key1"] = "this is example"
 
-# Header 1
-## Header 2
-### Header 3
+	// []byte encodes as a base64-encoded string, and a nil slice
+	// encodes as the null JSON value.
+	m["key2"] = []byte("this is example")
+	
+	ret, _ := json.Marshal(m)
+	fmt.Println(string(ret))
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+	// OutPut:{"key1":"this is example","key2":"dGhpcyBpcyBleGFtcGxl"}
+}
 ```
 
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
