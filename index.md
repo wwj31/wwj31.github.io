@@ -4,8 +4,8 @@
 
 
 ### 笔记
-json官方库，值类型是[]byte的一个细节
-```markdown
+`json官方库，值类型是[]byte的一个细节:
+```go
 func ExampleJson() {
 	m := make(map[string]interface{})
 	// String values encode as JSON strings coerced to valid UTF-8,
