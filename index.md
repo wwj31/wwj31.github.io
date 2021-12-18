@@ -18,7 +18,9 @@ func ExampleJson() {
 	
 	ret, _ := json.Marshal(m)
 	fmt.Println(string(ret))
-
+	
+	// map存储的[]byte类型，序列化会被编码成base64
+	
 	// OutPut:{"key1":"this is example","key2":"dGhpcyBpcyBleGFtcGxl"}
 }
 ```
